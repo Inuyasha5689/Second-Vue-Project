@@ -1,6 +1,7 @@
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
 <div id="app">
+    <h1 v-once>{{ title }}</h1>
     <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
 </div>
 
@@ -13,6 +14,7 @@
         },
         methods: {
             sayHello: function() {
+                this.title = 'Hello!';
                 return this.title; /* return title does not work */
             }
         }
